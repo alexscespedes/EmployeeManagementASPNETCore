@@ -17,5 +17,9 @@ public class AppDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
+
+        modelBuilder.Entity<Employee>()
+            .Property(e => e.Salary)
+            .HasPrecision(18, 2);
     }
 }
